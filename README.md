@@ -43,6 +43,8 @@ $ docker compose up -d
 ## Test
 
 ```bash
+$ npm install # si no fue hecho aún
+
 # Test unitarios
 $ npm run test
 
