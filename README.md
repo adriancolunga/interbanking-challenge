@@ -2,7 +2,7 @@
 
 ## Puntos Clave:
 
-* **Arquitectura Hexagonal:** El código está estructurado en capas claras (Dominio, Aplicación, Infraestructura, Presentación) para garantizar el desacople y testeabilidad.
+* **Arquitectura Hexagonal:** El proyecto está estructurado en capas claras (Dominio, Aplicación, Infraestructura, Presentación) para garantizar el desacople y testeabilidad.
 
 * **Tecnologías:**
 
@@ -20,9 +20,11 @@
 
 ## Endpoints:
 
-* `GET /companies/transfers/last-month`: Recupera las empresas que realizaron transferencias en el último mes.
+Para facilitar las pruebas se agrega el archivo `postman_collection.json`. Se debe importar usando Postman.
 
-* `GET /companies/adhered/last-month`: Recupera las empresas que se adhirieron al sistema en el último mes.
+* `GET /companies/transfers/last-month`: Trae las empresas que realizaron transferencias en el último mes.
+
+* `GET /companies/adhered/last-month`: Trae las empresas que se adhirieron al sistema en el último mes.
 
 * `POST /companies`: Permite la adhesión de una nueva empresa. Requiere un cuerpo JSON con `cuit` y `razonSocial`.
 
@@ -35,7 +37,7 @@
 $ git clone https://github.com/adriancolunga/interbanking-challenge.git
 
 # Despliegue
-$ docker compose up -d
+$ docker compose up --build -d
 ```
 
 ## Test
