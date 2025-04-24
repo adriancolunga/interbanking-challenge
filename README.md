@@ -20,6 +20,8 @@
 
 ## Endpoints:
 
+Para facilitar las pruebas se agrega el archivo `postman_collection.json`.
+
 * `GET /companies/transfers/last-month`: Recupera las empresas que realizaron transferencias en el último mes.
 
 * `GET /companies/adhered/last-month`: Recupera las empresas que se adhirieron al sistema en el último mes.
