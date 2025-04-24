@@ -5,4 +5,4 @@ RUN npm install
 COPY . .
 RUN npx prisma generate
 EXPOSE 3000
-CMD npx prisma generate && npx prisma migrate deploy && node src/presentation/server.js
+CMD npx prisma generate && npx prisma db push && node src/presentation/server.js
