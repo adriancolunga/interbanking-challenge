@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "dbe3cfce-3c76-450a-9b96-7f28c3a3b433",
+		"name": "interbanking-challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "16877411"
+	},
+	"item": [
+		{
+			"name": "create company",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cuit\": \"20-12345678-9\",\r\n    \"razonSocial\": \"Industria, S.A\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/companies"
+			},
+			"response": []
+		},
+		{
+			"name": "last-month",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/companies/transfers/last-month"
+			},
+			"response": []
+		},
+		{
+			"name": "adhered",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/companies/adhered/last-month"
+			},
+			"response": []
+		},
+		{
+			"name": "create transfer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"importe\": \"50000\",\r\n    \"idEmpresa\": \"20-12345678-9\",\r\n    \"cuentaDebito\": \"00012\",\r\n    \"cuenta\": \"001\",\r\n    \"fecha\": \"07/03/2025\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/transfers"
+			},
+			"response": []
+		}
+	]
+}
