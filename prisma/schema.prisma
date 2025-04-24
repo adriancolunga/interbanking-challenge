@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Company {
+  cuit           String    @id @unique
+  razonSocial    String
+  fechaAdhesion  DateTime @default(now())
+
+  transfers      Transfer[]
+
+  @@map("companies")
+}
+
+model Transfer {
+  id            Int      @id @default(autoincrement())
+  importe       Decimal  @db.Decimal(18, 2)
+  idEmpresa     String
+  cuentaDebito  String
+  cuenta        String
+  fecha         DateTime @default(now())
+
+  company       Company @relation(fields: [idEmpresa], references: [cuit])
+
+  @@map("transfers")
+}
